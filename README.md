@@ -40,6 +40,10 @@ Les améliorations déjà prévues sont :
 |---------------------------------------|---------------------------------------|
 | ![Image](support/picture/proto_2.png) | ![Image](support/picture/proto_3.png) |
 
+<br/>
+
+Ces photos sont faites à partir du prototype. Elles ne sont plus à jour.<br/>
+Je referais des photos à la prochaine version dans de bonnes conditions.
 
 <br/>
 
