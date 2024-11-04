@@ -322,6 +322,7 @@ python main.py
 Comme vous pouvez le constater les erreurs d’écriture/lecture des températures sont fréquentes pour le moment, mais ne pose aucun problème, cela vient de la concurence entre le process de récupération et l'utilisation du fichier temporaire. Je trouverais une solution plus élégante à l'avenir. 
 
 <br/>
+<br/>
 
 ## 💻 Création des fichiers Xorg :
 ### 📄 `/etc/X11/xorg.conf.d/10-blanking.conf` ➡️ [`10-blanking.conf`](https://github.com/archprojectdev/archmonitor/blob/main/support/file/10-blanking.conf)<br>
