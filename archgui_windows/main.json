@@ -1,0 +1,13 @@
+{
+    "parameters": {
+        "location_x": "50%",
+        "location_y": "50%",
+        "width": 800,
+        "height": 480
+    },
+    "items": [
+        [
+            [{"t": "graph", "k": "graph_interface", "p": [[0, 0], [0, 0]], "s": [800, 480], "bgc": "#000000"}]
+        ]
+    ]
+}

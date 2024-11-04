@@ -1,0 +1,104 @@
+{
+  "sensors": {
+    "wc_cpu": "/sys/bus/w1/devices/28-7f79541f64ff/w1_slave",
+    "wc_gpu": "/sys/bus/w1/devices/28-837e541f64ff/w1_slave",
+    "case": "/sys/bus/w1/devices/28-d97b541f64ff/w1_slave"
+  },
+  "gpio": {
+    "power": 26,
+    "pwm_pca": {
+      "fan_soc": 0,
+      "fan_cpu": 7,
+      "fan_gpu": 6,
+      "fan_case": 5,
+      "pump": 4
+    },
+    "tach": {
+      "fan_soc": 17,
+      "fan_cpu": 27,
+      "fan_gpu": 22,
+      "fan_case": 5,
+      "pump_cpu": 6,
+      "pump_gpu": 13
+    }
+  },
+  "mode": {
+    "selected": "silent",
+    "soc": {
+      "fan_soc": {
+        "degree_min_targeted": 30,
+        "pwm_min": 60,
+        "pwm_max": 100,
+        "pwm_max_at_degree": 40
+      }
+    },
+    "silent": {
+      "fan_cpu": {
+        "degree_min_targeted": 30,
+        "pwm_min": 40,
+        "pwm_max": 60,
+        "pwm_max_at_degree": 45
+      },
+      "fan_gpu": {
+        "degree_min_targeted": 30,
+        "pwm_min": 40,
+        "pwm_max": 60,
+        "pwm_max_at_degree": 45
+      },
+      "fan_case": {
+        "degree_min_targeted": 20,
+        "pwm_min": 40,
+        "pwm_max": 60,
+        "pwm_max_at_degree": 40
+      },
+      "pump": {
+        "pwm": 75
+      }
+    },
+    "performance": {
+      "fan_cpu": {
+        "degree_min_targeted": 30,
+        "pwm_min": 50,
+        "pwm_max": 100,
+        "pwm_max_at_degree": 45
+      },
+      "fan_gpu": {
+        "degree_min_targeted": 30,
+        "pwm_min": 50,
+        "pwm_max": 100,
+        "pwm_max_at_degree": 45
+      },
+      "fan_case": {
+        "degree_min_targeted": 20,
+        "pwm_min": 50,
+        "pwm_max": 100,
+        "pwm_max_at_degree": 40
+      },
+      "pump": {
+        "pwm": 100
+      }
+    }
+  },
+  "led": {
+    "number": 18,
+    "selected": "a",
+    "a": {
+      "mode": "fixe-one-color",
+      "color": {"r":110, "g":240, "b":110},
+      "speed": 10
+    },
+    "b": {
+      "mode": "pulse-one-color",
+      "color": {"r":110, "g":110, "b":110},
+      "intensity-mini": 40,
+      "speed": 10
+    },
+    "c": {
+      "mode": "pulse-two-color",
+      "color_0": {"r":110, "g":110, "b":240},
+      "color_1": {"r":110, "g":240, "b":110},
+      "intensity-mini": 40,
+      "speed": 10
+    }
+  }
+}
