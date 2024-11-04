@@ -112,7 +112,7 @@ Une fois l’ordinateur démarré, le Raspberry PI contrôle les signaux PWM des
 | 3x Fixation_Cable_2P_5D | [`Plan PDF`](https://github.com/archprojectdev/archmonitor/blob/main/support/blueprint/Fixation_Cable_2P_5D/Fixation_Cable_2P_5D.pdf) - [`STL`](https://github.com/archprojectdev/archmonitor/blob/main/support/blueprint/Fixation_Cable_2P_5D/Fixation_Cable_2P_5D.STL)         |
 | 1x Panneau_Ports_RPI_4B | [`Plan PDF`](https://github.com/archprojectdev/archmonitor/blob/main/support/blueprint/Panneau_Ports_RPI_4B/Panneau_Ports_RPI_4B.pdf) - [`STL`](https://github.com/archprojectdev/archmonitor/blob/main/support/blueprint/Panneau_Ports_RPI_4B/Panneau_Ports_RPI_4B.STL)         |
 
-Plan de montage général : [`Plan PDF`](https://github.com/archprojectdev/archmonitor/blob/main/support/blueprint/ArchMonitor.pdf)<br/>
+Plan de montage général : [`Plan PDF`](https://github.com/archprojectdev/archmonitor/blob/main/support/blueprint/ArchMonitor.pdf)<br/><br/>
 ⚠️ Le PAD de cuivre n’est pas visible sur le plan. Il prend place dans l'encoche du boitier sous le PI avec un PAD thermique en silicone entre le PI et le PAD en cuivre.
 
 <br/>
