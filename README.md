@@ -82,6 +82,8 @@ Une fois l’ordinateur démarré, le Raspberry PI contrôle les signaux PWM des
 | 2x Cable USB-A Mini-B   | [`Image`](https://github.com/archprojectdev/archmonitor/blob/main/support/preview/usbaminib.png) | [`Amazon`](https://www.amazon.fr/dp/B089F9V5GK) |
 | 1x Cable extension SATA | [`Image`](https://github.com/archprojectdev/archmonitor/blob/main/support/preview/sata_power.png) | [`Amazon`](https://www.amazon.fr/dp/B07C71J8LL) |
 
+<br/>
+
 ⚠️ Les liens vers Amazon sont le matériel que j’ai utilisé, c’est simplement indicatif.<br/>
 ⚠️ Suivant l’écran utilisé les cables nécessaires peuvent varier.
 

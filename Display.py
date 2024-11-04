@@ -975,47 +975,59 @@ class Display:
         """
         :param target:
         """
-        value = int(self.new_infos[target] * 0.20)
+        try:
+            value = int(self.new_infos[target] * 0.20)
 
-        for x in range(value):
-            self.modules["archgui"].graph_bring_figure_to_front(
-                uniqid=self.window,
-                graph=self.graph,
-                figure=self.figures[target]["light"][x])
+            for x in range(value):
+                self.modules["archgui"].graph_bring_figure_to_front(
+                    uniqid=self.window,
+                    graph=self.graph,
+                    figure=self.figures[target]["light"][x])
 
-        for x in range(19 - value):
-            self.modules["archgui"].graph_send_figure_to_back(
-                uniqid=self.window,
-                graph=self.graph,
-                figure=self.figures[target]["light"][19 - x])
+            for x in range(19 - value):
+                self.modules["archgui"].graph_send_figure_to_back(
+                    uniqid=self.window,
+                    graph=self.graph,
+                    figure=self.figures[target]["light"][19 - x])
+        except:
+            print("Display Erreur : Percent Target Not Found")
+            print("-> Target : " + str(target))
 
     def print_rpm(self, target):
         """
         :param target:
         """
-        self.modules["archgui"].graph_send_figure_to_back(
-            uniqid=self.window,
-            graph=self.graph,
-            figure=self.figures[target][self.new_infos[target]])
+        try:
+            self.modules["archgui"].graph_send_figure_to_back(
+                uniqid=self.window,
+                graph=self.graph,
+                figure=self.figures[target][self.new_infos[target]])
 
-        self.modules["archgui"].graph_bring_figure_to_front(
-            uniqid=self.window,
-            graph=self.graph,
-            figure=self.figures[target][self.new_infos[target]])
+            self.modules["archgui"].graph_bring_figure_to_front(
+                uniqid=self.window,
+                graph=self.graph,
+                figure=self.figures[target][self.new_infos[target]])
+        except:
+            print("Display Erreur : Rpm Target Not Found")
+            print("-> Target : " + str(target))
 
     def print_degree(self, target):
         """
         :param target:
         """
-        self.modules["archgui"].graph_send_figure_to_back(
-            uniqid=self.window,
-            graph=self.graph,
-            figure=self.figures[target][self.new_infos[target]])
+        try:
+            self.modules["archgui"].graph_send_figure_to_back(
+                uniqid=self.window,
+                graph=self.graph,
+                figure=self.figures[target][self.new_infos[target]])
 
-        self.modules["archgui"].graph_bring_figure_to_front(
-            uniqid=self.window,
-            graph=self.graph,
-            figure=self.figures[target][self.new_infos[target]])
+            self.modules["archgui"].graph_bring_figure_to_front(
+                uniqid=self.window,
+                graph=self.graph,
+                figure=self.figures[target][self.new_infos[target]])
+        except:
+            print("Display Erreur : Degree Target Not Found")
+            print("-> Target : " + str(target))
 
     # ----------------------------------------------------------------------------------------
     # Reveal
