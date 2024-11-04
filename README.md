@@ -150,13 +150,14 @@ sudo reboot
 <br/>
 
 ## 💻 Activation des ports :
-```bash
-sudo raspi-config
-```
 
 Puis activez dans `Interface Options` les options suivantes :
-- SPI    : Enabled
-- 1-Wire : Enabled
+```bash
+sudo raspi-config
+     └── Interface Options
+         ├── SPI    : Enabled
+         └── 1-Wire : Enabled
+```
 
 ```bash
 sudo modprobe w1-gpio
@@ -406,8 +407,15 @@ nano .xinitrc
 
 ## 💻 Redémarrage :
 
+Démarrage en mode console avec autologin.
+
 ```bash
-reboot
+sudo raspi-config
+     └── systeme
+         └── boot / Autologin
+             └── console Autologin
+
+sudo reboot
 ```
 
 Si tout c’est bien passé, vous devez arriver sur l’interface de l’Archmonitor.
