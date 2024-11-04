@@ -20,44 +20,47 @@ Le logiciel ArchMonitor est basé sur la surcouche `ArchGUI` lui-même basé sur
 Ce programme fonctionne sur un `Raspberry PI 4B` avec le dernier `Raspberry Pi OS 64Bits` comme OS.<br/><br/>
 
 
-⚠️ Ceci module est encore en phase beta. De nombreuse amélioration et possibilité vont etre apporté dans les mois à venir.<br/>
+⚠️ Ceci module est encore en phase beta. De nombreuse amélioration et possibilité vont etre apporté dans les mois à venir.<br/><br/>
 Les améliorations déjà prévues sont : 
 
-- Une configuration de plusieurs modes lumineux supplémentaires directement via l'écran tactile.
-- Une gestion des modes lumineux par rapport au démarrage et à l'arrêt de l'ordinateur.
-- Configuration des modes `silent` et `performance` via l'écran tactile.
-- Démarrage de l'ordinateur via l'écran tactile.
+- Une configuration de plusieurs modes lumineux supplémentaires directement via l’écran tactile.
+- Une gestion des modes lumineux par rapport au démarrage et à l’arrêt de l’ordinateur.
+- Configuration des modes `silent` et `performance` via l’écran tactile.
+- Démarrage de l’ordinateur via l’écran tactile.
 - Ajout d’un second circuit ARGB2 pour avoir deux gestions lumineuses en tandem.
+- Ajout d’un second écrans pour l’affichage de donnée ou personnage animé.
 
+<br/>
 
 ## 😊 Alimentation et principe de fonctionnement :
 
 ### Les alimentations :
 
 Le Raspberry PI est alimenté par un USB3.2 interne de la carte mère.
-Il faut veiller à ce que les ports USB reste alimenté après l'arrêt de l'ordinateur, voir dans le BIOS pour paramétrer 
+Il faut veiller à ce que les ports USB reste alimenté après l’arrêt de l’ordinateur, voir dans le BIOS pour paramétrer 
 cela si ce n’est pas d’usine.<br/>
 
-L’écran est alimenté via un USB dédier du Raspberry PI ou via l'USB du tactile selon les modèles.<br/>
+L’écran est alimenté via un USB dédier du Raspberry PI ou via l’USB du tactile selon les modèles.<br/>
 
 Le ventilateur du Raspberry est alimenté via le 5 V du PI élevé à 12 V via le boosteur, voir les câblages dans la partie dédiée ci-dessous.
 
-Les HUBs des ventilateurs ainsi que les deux 4-Pins des pompes sont alimenté via le cable SATA de l'alimentation de l'ordinateur. Ils ne sont donc pas alimentés lorsque l'ordinateur est éteint.
+Les HUBs des ventilateurs ainsi que les deux 4-Pins des pompes sont alimenté via le cable SATA de l’alimentation de l’ordinateur. Ils ne sont donc pas alimentés lorsque l’ordinateur est éteint.
 
-Le circuit ARGB2 est alimenté via l'USB qui alimente le PI, le circuit ARGB2 reste donc alimenté une fois l'ordinateur éteint.
+Le circuit ARGB2 est alimenté via l’USB qui alimente le PI, le circuit ARGB2 reste donc alimenté une fois l’ordinateur éteint.
 
 ### Le fonctionnement :
 
-Le Raspberry PI et l'écran restent toujours alimenté. L’écran peut donc piloter l'Archmonitor avec le PC éteint pour gérer le circuit ARGB2.
-Une fois l'ordinateur démarré, le Raspberry PI contrôle les signaux PWM des différentes pompes et HUBs de ventilateur par rapport aux paramètres donnés dans le fichier `config.json` et aux températures récupérées par les sondes.
+Le Raspberry PI et l’écran restent toujours alimenté. L’écran peut donc piloter l’Archmonitor avec le PC éteint pour gérer le circuit ARGB2.
+Une fois l’ordinateur démarré, le Raspberry PI contrôle les signaux PWM des différentes pompes et HUBs de ventilateur par rapport aux paramètres donnés dans le fichier `config.json` et aux températures récupérées par les sondes.
 
-
+<br/>
 
 ## 🛠️ Lien externe :
 
 - [`Raspberry Pi OS`](https://www.raspberrypi.com/software/)
 - [`ws2812-spi`](https://github.com/joosteto/ws2812-spi)
 
+<br/>
 
 ## 🛠️ Matériel manufacturé :
 
@@ -80,7 +83,9 @@ Une fois l'ordinateur démarré, le Raspberry PI contrôle les signaux PWM des d
 | 1x Cable extension SATA | [`Image`](https://github.com/archprojectdev/archmonitor/blob/main/support/preview/sata_power.png) | [`Amazon`](https://www.amazon.fr/dp/B07C71J8LL) |
 
 ⚠️ Les liens vers Amazon sont le matériel que j’ai utilisé, c’est simplement indicatif.<br/>
-⚠️ Suivant l'écran utilisé les cables nécessaires peuvent varier.
+⚠️ Suivant l’écran utilisé les cables nécessaires peuvent varier.
+
+<br/>
 
 ## 🛠️ Impression 3D :
 
@@ -94,6 +99,7 @@ Une fois l'ordinateur démarré, le Raspberry PI contrôle les signaux PWM des d
 
 Plan de montage général : [`Plan PDF`](https://github.com/archprojectdev/archmonitor/blob/main/support/blueprint/ArchMonitor.pdf)
 
+<br/>
 
 ## 🛠️ Câblage :
 
@@ -103,14 +109,16 @@ Plan de montage général : [`Plan PDF`](https://github.com/archprojectdev/archm
 | RPI     | [`Plan PDF`](https://www.amazon.fr/dp/B09TTNF8BT) |
 | Sensors | [`Plan PDF`](https://www.amazon.fr/dp/B09TTNF8BT) |
 
+<br/>
 
 ## 💻️ Installation de Raspberry Pi OS :
- - Configuration de l'installation via `Raspberry PI Imager` sur Ubuntu ou une autre distribution
+ - Configuration de l’installation via `Raspberry PI Imager` sur Ubuntu ou une autre distribution
  - Installation de `Raspberry Pi OS 64Bits` sur la carte SD
  - Démarrage du PI
 
 Pour plus de simplicité j’utilise l’user `archmonitor`, vous le retrouver dans les commandes à venir.
 
+<br/>
 
 ## 💻 Mise à jour :
 ```bash
@@ -119,6 +127,7 @@ sudo rpi-update
 sudo reboot
 ```
 
+<br/>
 
 ## 💻 Activation des ports :
 ```bash
@@ -134,6 +143,7 @@ sudo modprobe w1-gpio
 sudo modprobe w1-therm
 ```
 
+<br/>
 
 ## 💻 Modification des fichiers boot :
 
@@ -145,7 +155,6 @@ Ajouter à la fin de la ligne :
 ```bash
 consoleblank=0 spidev.bufsiz=250000
 ```
-
 
 ### 📄 `/boot/firmware/config.txt` ➡️ [`config.txt`](https://github.com/archprojectdev/archmonitor/blob/main/support/file/config.txt)<br>
 ```bash
@@ -178,12 +187,12 @@ framebufferheight=480
 framebufferwidth=800
 ```
 
-
 ### Redémarrer le PI : <br>
 ```bash
 sudo reboot
 ```
 
+<br/>
 
 ## 💻 Test de détection des sondes :
 ```bash
@@ -223,6 +232,7 @@ sudo pip3 install --break-system-packages adafruit-circuitpython-pca9685
 sudo reboot
 ```
 
+<br/>
 
 ## 💻 Téléchargement :
 📂 Dans le `home` de votre `user`:
@@ -272,6 +282,8 @@ mv archgui-main archgui
 └── Temperature.py
 ```
 
+<br/>
+
 ## 💻 Configuration :
 📂 Dans le `home` de votre `user`:
 ```bash
@@ -295,12 +307,10 @@ Une fois déterminé, modifier le fichier `/home/archmonitor/archmonitor/config.
 }
 ```
 
-
-
+<br/>
 
 ## 💻 Création des fichiers Xorg :
 ### 📄 `/etc/X11/xorg.conf.d/10-blanking.conf` ➡️ [`10-blanking.conf`](https://github.com/archprojectdev/archmonitor/blob/main/support/file/10-blanking.conf)<br>
-
 
 ```bash
 sudo nano /etc/X11/xorg.conf.d/10-blanking.conf
@@ -318,7 +328,6 @@ Section "ServerLayout"
     Option "BlankTime"   "0"
 EndSection
 ```
-
 
 ### 📄 `/etc/X11/xorg.conf.d/10-monitor.conf` ➡️ [`10-monitor.conf`](https://github.com/archprojectdev/archmonitor/blob/main/support/file/10-monitor.conf)<br>
 ```bash
@@ -341,6 +350,7 @@ Section "Screen"
 EndSection
 ```
 
+<br/>
 
 ## 💻 Création des fichiers de lancement :
 ### 📄 Créer le fichier : `/home/archmonitor/.bashrc`
@@ -358,3 +368,14 @@ nano startx.sh
 nano .xinitrc
 >> exec python /home/archmonitor/archmonitor/main.py
 ```
+
+<br/>
+
+## 💻 Redémarrage :
+
+```bash
+reboot
+```
+
+Si tout c’est bien passé vous devez arriver sur l’interface de l’Archmonitor.
+
