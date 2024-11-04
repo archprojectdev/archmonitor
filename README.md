@@ -308,6 +308,15 @@ Une fois déterminé, modifier le fichier `/home/archmonitor/archmonitor/config.
   "case": "/sys/bus/w1/devices/28-d97b541f64ff/w1_slave"
 }
 ```
+<br/>
+
+## 💻 Test :
+```bash
+cd archmonitor
+python main.py
+```
+
+![Image](https://raw.githubusercontent.com/archprojectdev/archmonitor/refs/heads/main/support/picture/test_screen.png?token=GHSAT0AAAAAACZXHYNXMDGKUYV4JFBI35B4ZZIXJJA)
 
 <br/>
 
