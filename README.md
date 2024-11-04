@@ -316,7 +316,7 @@ cd archmonitor
 python main.py
 ```
 
-![Image](https://raw.githubusercontent.com/archprojectdev/archmonitor/refs/heads/main/support/picture/test_screen.png?token=GHSAT0AAAAAACZXHYNXMDGKUYV4JFBI35B4ZZIXJJA)
+![Image](https://github.com/archprojectdev/archmonitor/blob/main/support/picture/test_screen.png?raw=true)
 
 <br/>
 Comme vous pouvez le constater les erreurs d’écriture/lecture des températures sont fréquentes pour le moment, mais ne pose aucun problème, cela vient de la concurence entre le process de récupération et l'utilisation du fichier temporaire. Je trouverais une solution plus élégante à l'avenir. 
