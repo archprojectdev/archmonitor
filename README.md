@@ -1,26 +1,26 @@
 
-# <p align="center">ArchMonitor</p>
+# <p align="center">Archmonitor</p>
 
-ArchMonitor est un module de gestion autonome de refroidissement liquide haut de gamme. 
-Cette premiere version beta fonctionne sur un `Raspberry PI 4B` et prend en charge la configuration suivante :
+Archmonitor est un module de gestion autonome de refroidissement liquide. 
+Cette première version beta fonctionne sur un `Raspberry PI 4B` et prend en charge la configuration suivante :
 
 - Deux pompes
 - Deux sondes pour la température de liquide
 - Une sonde pour le boitier
-- Trois circuits indépendant de cinq ventilateurs
+- Trois circuits indépendants de cinq ventilateurs
 - Un circuit global `ARGB2`
 - Un écran tactile de contrôle
 
 Les configurations possibles sous cette version sont de :
 
 - Deux modes de refroidissement configurable
-- Trois modes configurable pour le circuit `ARGB2`
+- Trois modes configurables pour le circuit `ARGB2`
 
-Le logiciel ArchMonitor est basé sur la surcouche `ArchGUI` lui-même basé sur `FreeSimpleGUI` et sur `ws2812.py`. 
+Le logiciel Archmonitor est basé sur la surcouche `ArchGUI` lui-même basé sur `FreeSimpleGUI` et sur `ws2812.py`. 
 Ce programme fonctionne sur un `Raspberry PI 4B` avec le dernier `Raspberry Pi OS 64Bits` comme OS.<br/><br/>
 
 
-⚠️ Ceci module est encore en phase beta. De nombreuses améliorations et possibilités vont etre apportées dans les mois à venir.<br/><br/>
+⚠️ Ce module est encore en phase beta. De nombreuses améliorations et possibilités vont être apportées dans les mois à venir.<br/><br/>
 Les améliorations déjà prévues sont : 
 
 - Une configuration de plusieurs modes lumineux supplémentaires directement via l’écran tactile.
@@ -28,7 +28,7 @@ Les améliorations déjà prévues sont :
 - Configuration des modes `silent` et `performance` via l’écran tactile.
 - Démarrage de l’ordinateur via l’écran tactile.
 - Ajout d’un second circuit ARGB2 pour avoir deux gestions lumineuses en tandem.
-- Ajout d’un second écrans pour l’affichage de donnée ou personnage animé.
+- Ajout d’un second écran pour l’affichage de données ou personnage animé.
 
 <br/>
 
@@ -56,7 +56,7 @@ L’écran est alimenté via un USB dédier du Raspberry PI ou via l’USB du ta
 
 Le ventilateur du Raspberry est alimenté via le 5 V du PI élevé à 12 V via le boosteur, voir les câblages dans la partie dédiée ci-dessous.
 
-Les HUBs des ventilateurs ainsi que les deux 4-Pins des pompes sont alimenté via le cable SATA de l’alimentation de l’ordinateur. Ils ne sont donc pas alimentés lorsque l’ordinateur est éteint.
+Les HUBs des ventilateurs ainsi que les deux 4-Pins des pompes sont alimentés via le cable SATA de l’alimentation de l’ordinateur. Ils ne sont donc pas alimentés lorsque l’ordinateur est éteint.
 
 Le circuit ARGB2 est alimenté via l’USB qui alimente le PI, le circuit ARGB2 reste donc alimenté une fois l’ordinateur éteint.
 
@@ -98,7 +98,7 @@ Une fois l’ordinateur démarré, le Raspberry PI contrôle les signaux PWM des
 <br/>
 
 ⚠️ Les liens vers Amazon sont le matériel que j’ai utilisé, c’est simplement indicatif.<br/>
-⚠️ Suivant l’écran utilisé les cables nécessaires peuvent varier.
+⚠️ Suivant l’écran utilisé les câbles nécessaires peuvent varier.
 
 <br/>
 
@@ -112,7 +112,7 @@ Une fois l’ordinateur démarré, le Raspberry PI contrôle les signaux PWM des
 | 3x Fixation_Cable_2P_5D | [`Plan PDF`](https://github.com/archprojectdev/archmonitor/blob/main/support/blueprint/Fixation_Cable_2P_5D/Fixation_Cable_2P_5D.pdf) - [`STL`](https://github.com/archprojectdev/archmonitor/blob/main/support/blueprint/Fixation_Cable_2P_5D/Fixation_Cable_2P_5D.STL)         |
 | 1x Panneau_Ports_RPI_4B | [`Plan PDF`](https://github.com/archprojectdev/archmonitor/blob/main/support/blueprint/Panneau_Ports_RPI_4B/Panneau_Ports_RPI_4B.pdf) - [`STL`](https://github.com/archprojectdev/archmonitor/blob/main/support/blueprint/Panneau_Ports_RPI_4B/Panneau_Ports_RPI_4B.STL)         |
 
-Plan de montage général : [`Plan PDF`](https://github.com/archprojectdev/archmonitor/blob/main/support/blueprint/ArchMonitor.pdf)<br/><br/>
+Plan de montage général : [`Plan PDF`](https://github.com/archprojectdev/archmonitor/blob/main/support/blueprint/Archmonitor.pdf)<br/><br/>
 ⚠️ Le PAD de cuivre n’est pas visible sur le plan. Il prend place dans l'encoche du boitier sous le PI avec un PAD thermique en silicone entre le PI et le PAD en cuivre.
 
 <br/>
@@ -121,9 +121,9 @@ Plan de montage général : [`Plan PDF`](https://github.com/archprojectdev/archm
 
 | Circuit | Fichiers                                          |
 |---------|---------------------------------------------------|
-| Général | [`Plan PDF`](https://www.amazon.fr/dp/B09TTNF8BT) |
-| RPI     | [`Plan PDF`](https://www.amazon.fr/dp/B09TTNF8BT) |
-| Sensors | [`Plan PDF`](https://www.amazon.fr/dp/B09TTNF8BT) |
+| Général | [`Plan PDF`](https://github.com/archprojectdev/archmonitor/blob/main/support/circuit/General.pdf) |
+| RPI     | [`Plan PDF`](https://github.com/archprojectdev/archmonitor/blob/main/support/circuit/RPI.pdf) |
+| Sensors | [`Plan PDF`](https://github.com/archprojectdev/archmonitor/blob/main/support/circuit/Sensors.pdf) |
 
 <br/>
 
@@ -132,7 +132,7 @@ Plan de montage général : [`Plan PDF`](https://github.com/archprojectdev/archm
  - Installation de `Raspberry Pi OS 64Bits` sur la carte SD
  - Démarrage du PI
 
-Pour plus de simplicité j’utilise l’user `archmonitor`, vous le retrouver dans les commandes à venir.
+Pour plus de simplicité j’utilise l’user `archmonitor`, vous le retrouvez dans les commandes à venir.
 
 <br/>
 
@@ -150,7 +150,7 @@ sudo reboot
 sudo raspi-config
 ```
 
-Puis activer dans `Interface Options` les options suivantes :
+Puis activez dans `Interface Options` les options suivantes :
 - SPI    : Enabled
 - 1-Wire : Enabled
 
@@ -313,8 +313,8 @@ python sensors.py
 /sys/bus/w1/devices/28-d97b541f64ff/w1_slave - 21
 ```
 Avec une source de chaleur, 
-faites varier la température de chaque sonde pour déterminer quelle sonde correspond à quel ID.<br/>
-Une fois déterminé, modifier le fichier `/home/archmonitor/archmonitor/config.json` en conséquence :
+faites varier la température de chaque sondes pour déterminer quelle sonde correspond à quel ID.<br/>
+Une fois déterminé, modifiez le fichier `/home/archmonitor/archmonitor/config.json` en conséquence :
 ```bash
 "sensors": {
   "wc_cpu": "/sys/bus/w1/devices/28-7f79541f64ff/w1_slave",
@@ -333,7 +333,7 @@ python main.py
 ![Image](https://github.com/archprojectdev/archmonitor/blob/main/support/picture/test_screen.png?raw=true)
 
 <br/>
-Comme vous pouvez le constater les erreurs d’écriture/lecture des températures sont fréquentes pour le moment, mais ne pose aucun problème, cela vient de la concurence entre le process de récupération et l'utilisation du fichier temporaire. Je trouverais une solution plus élégante à l'avenir. 
+Comme vous pouvez le constater, les erreurs d’écriture/lecture des températures sont fréquentes pour le moment, mais ne posent aucun problème, cela vient de la concurrence entre le process de récupération et l'utilisation du fichier temporaire. Je trouverais une solution plus élégante à l'avenir. 
 
 <br/>
 <br/>
@@ -406,5 +406,4 @@ nano .xinitrc
 reboot
 ```
 
-Si tout c’est bien passé vous devez arriver sur l’interface de l’Archmonitor.
-
+Si tout c’est bien passé, vous devez arriver sur l’interface de l’Archmonitor.
