@@ -79,6 +79,7 @@ Une fois l'ordinateur démarré, le Raspberry PI contrôle les signaux PWM des d
 | 2x Cable USB-A Mini-B   | [`Image`](https://github.com/archprojectdev/archmonitor/blob/main/support/preview/usbaminib.png) | [`Amazon`](https://www.amazon.fr/dp/B089F9V5GK) |
 | 1x Cable extension SATA | [`Image`](https://github.com/archprojectdev/archmonitor/blob/main/support/preview/sata_power.png) | [`Amazon`](https://www.amazon.fr/dp/B07C71J8LL) |
 
+⚠️ Les liens vers Amazon sont le matériel que j’ai utilisé, c’est simplement indicatif.<br/>
 ⚠️ Suivant l'écran utilisé les cables nécessaires peuvent varier.
 
 ## 🛠️ Impression 3D :
@@ -104,7 +105,7 @@ Plan de montage général : [`Plan PDF`](https://github.com/archprojectdev/archm
 
 
 ## 💻️ Installation de Raspberry Pi OS :
- - Configuration l'installation via `Raspberry PI Imager` via Ubuntu au une autre distribution
+ - Configuration de l'installation via `Raspberry PI Imager` sur Ubuntu ou une autre distribution
  - Installation de `Raspberry Pi OS 64Bits` sur la carte SD
  - Démarrage du PI
 
@@ -136,7 +137,7 @@ sudo modprobe w1-therm
 
 ## 💻 Modification des fichiers boot :
 
-### 📄 `/boot/firmware/cmdline.txt` ➡️ [`cmdline.txt`](https://www.amazon.fr/dp/B09TTNF8BT)<br>
+### 📄 `/boot/firmware/cmdline.txt` ➡️ [`cmdline.txt`](https://github.com/archprojectdev/archmonitor/blob/main/support/file/cmdline.txt)<br>
 ```bash
 sudo nano /boot/firmware/cmdline.txt
 ```
@@ -146,7 +147,7 @@ consoleblank=0 spidev.bufsiz=250000
 ```
 
 
-### 📄 `/boot/firmware/config.txt` ➡️ [`config.txt`](https://www.amazon.fr/dp/B09TTNF8BT)<br>
+### 📄 `/boot/firmware/config.txt` ➡️ [`config.txt`](https://github.com/archprojectdev/archmonitor/blob/main/support/file/config.txt)<br>
 ```bash
 sudo nano /boot/firmware/config.txt
 ```
@@ -298,7 +299,7 @@ Une fois déterminé, modifier le fichier `/home/archmonitor/archmonitor/config.
 
 
 ## 💻 Création des fichiers Xorg :
-### 📄 `/etc/X11/xorg.conf.d/10-blanking.conf` ➡️ [`10-blanking.conf`](https://www.amazon.fr/dp/B09TTNF8BT)<br>
+### 📄 `/etc/X11/xorg.conf.d/10-blanking.conf` ➡️ [`10-blanking.conf`](https://github.com/archprojectdev/archmonitor/blob/main/support/file/10-blanking.conf)<br>
 
 
 ```bash
@@ -319,7 +320,7 @@ EndSection
 ```
 
 
-### 📄 `/etc/X11/xorg.conf.d/10-monitor.conf` ➡️ [`10-monitor.conf`](https://www.amazon.fr/dp/B09TTNF8BT)<br>
+### 📄 `/etc/X11/xorg.conf.d/10-monitor.conf` ➡️ [`10-monitor.conf`](https://github.com/archprojectdev/archmonitor/blob/main/support/file/10-monitor.conf)<br>
 ```bash
 sudo nano /etc/X11/xorg.conf.d/10-monitor.conf
 ```
