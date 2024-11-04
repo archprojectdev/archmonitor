@@ -17,7 +17,40 @@ Les configurations possibles sous cette version sont de :
 - Trois modes configurable pour le circuit `ARGB2`
 
 Le logiciel ArchMonitor est basé sur la surcouche `ArchGUI` lui-même basé sur `FreeSimpleGUI` et sur `ws2812.py`. 
-Ce programme fonctionne sur un `Raspberry PI 4B` avec le dernier `Raspberry Pi OS 64Bits` comme OS.
+Ce programme fonctionne sur un `Raspberry PI 4B` avec le dernier `Raspberry Pi OS 64Bits` comme OS.<br/><br/>
+
+
+⚠️ Ceci module est encore en phase beta. De nombreuse amélioration et possibilité vont etre apporté dans les mois à venir.<br/>
+Les améliorations déjà prévues sont : 
+
+- Une configuration de plusieurs modes lumineux supplémentaires directement via l'écran tactile.
+- Une gestion des modes lumineux par rapport au démarrage et à l'arrêt de l'ordinateur.
+- Configuration des modes `silent` et `performance` via l'écran tactile.
+- Démarrage de l'ordinateur via l'écran tactile.
+- Ajout d’un second circuit ARGB2 pour avoir deux gestions lumineuses en tandem.
+
+
+## 😊 Alimentation et principe de fonctionnement :
+
+### Les alimentations :
+
+Le Raspberry PI est alimenté par un USB3.2 interne de la carte mère.
+Il faut veiller à ce que les ports USB reste alimenté après l'arrêt de l'ordinateur, voir dans le BIOS pour paramétrer 
+cela si ce n’est pas d’usine.<br/>
+
+L’écran est alimenté via un USB dédier du Raspberry PI ou via l'USB du tactile selon les modèles.<br/>
+
+Le ventilateur du Raspberry est alimenté via le 5 V du PI élevé à 12 V via le boosteur, voir les câblages dans la partie dédiée ci-dessous.
+
+Les HUBs des ventilateurs ainsi que les deux 4-Pins des pompes sont alimenté via le cable SATA de l'alimentation de l'ordinateur. Ils ne sont donc pas alimentés lorsque l'ordinateur est éteint.
+
+Le circuit ARGB2 est alimenté via l'USB qui alimente le PI, le circuit ARGB2 reste donc alimenté une fois l'ordinateur éteint.
+
+### Le fonctionnement :
+
+Le Raspberry PI et l'écran restent toujours alimenté. L’écran peut donc piloter l'Archmonitor avec le PC éteint pour gérer le circuit ARGB2.
+Une fois l'ordinateur démarré, le Raspberry PI contrôle les signaux PWM des différentes pompes et HUBs de ventilateur par rapport aux paramètres donnés dans le fichier `config.json` et aux températures récupérées par les sondes.
+
 
 
 ## 🛠️ Lien externe :
@@ -26,39 +59,42 @@ Ce programme fonctionne sur un `Raspberry PI 4B` avec le dernier `Raspberry Pi O
 - [`ws2812-spi`](https://github.com/joosteto/ws2812-spi)
 
 
-## 🛠️ Le matériel manufacturé :
+## 🛠️ Matériel manufacturé :
 
 
-| Pièces                  | Aperçu                                         | Achat                                           |
-|-------------------------|------------------------------------------------|-------------------------------------------------|
-| 1x Raspberry PI 4B      | [`Image`](https://www.amazon.fr/dp/B09TTNF8BT) | [`Amazon`](https://www.amazon.fr/dp/B09TTNF8BT) |
-| 1x Dissipateur          | [`Image`](https://www.amazon.fr/dp/B09TTNF8BT) | [`Amazon`](https://www.amazon.fr/dp/B08N617L1J) |
-| 1x Ventilateur 120mm    | [`Image`](https://www.amazon.fr/dp/B09TTNF8BT) | [`Amazon`](https://www.amazon.fr/dp/B09RWTCXRR) |
-| 1x Contrôleur PCA9685   | [`Image`](https://www.amazon.fr/dp/B09TTNF8BT) | [`Amazon`](https://www.amazon.fr/dp/B072N8G7Y9) |
-| 3x Sonde DS18B20        | [`Image`](https://www.amazon.fr/dp/B09TTNF8BT) | [`Amazon`](https://www.amazon.fr/dp/B075FYYLLV) |
-| 3x HUBS FAN 4 PINS      | [`Image`](https://www.amazon.fr/dp/B09TTNF8BT) | [`Amazon`](https://www.amazon.fr/dp/B08XWWXBYD) |
-| 2x Cables FAN 4 PINS    | [`Image`](https://www.amazon.fr/dp/B09TTNF8BT) | [`Amazon`](https://www.amazon.fr/dp/B01N1Z3FYD) |
-| 1x HUB ARGB2 + Cable    | [`Image`](https://www.amazon.fr/dp/B09TTNF8BT) | [`Amazon`](https://www.amazon.fr/dp/B0D2SMNKZY) |
-| 1x Écran 800x480        | [`Image`](https://www.amazon.fr/dp/B09TTNF8BT) | [`Amazon`](https://www.amazon.fr/dp/B096ZSZFC8) |
-| 1x Cable Micro HDMI     | [`Image`](https://www.amazon.fr/dp/B09TTNF8BT) | [`Amazon`](https://www.amazon.fr/dp/B096ZSZFC8) |
-| 3x Cable USB            | [`Image`](https://www.amazon.fr/dp/B09TTNF8BT) | [`Amazon`](https://www.amazon.fr/dp/B096ZSZFC8) |
-| 1x Cable extension SATA | [`Image`](https://www.amazon.fr/dp/B09TTNF8BT) | [`Amazon`](https://www.amazon.fr/dp/B07C71J8LL) |
+| Pièces                  | Aperçu                                                                                       | Achat                                           |
+|-------------------------|----------------------------------------------------------------------------------------------|-------------------------------------------------|
+| 1x Raspberry PI 4B      | [`Image`](https://github.com/archprojectdev/archmonitor/blob/main/support/preview/RPI4B.png) | [`Amazon`](https://www.amazon.fr/dp/B09TTNF8BT) |
+| 1x Dissipateur          | [`Image`](https://github.com/archprojectdev/archmonitor/blob/main/support/preview/heat_sink.png) | [`Amazon`](https://www.amazon.fr/dp/B08N617L1J) |
+| 1x Ventilateur 120mm    | [`Image`](https://github.com/archprojectdev/archmonitor/blob/main/support/preview/fan_120mm.png) | [`Amazon`](https://www.amazon.fr/dp/B09RWTCXRR) |
+| 1x Contrôleur PCA9685   | [`Image`](https://github.com/archprojectdev/archmonitor/blob/main/support/preview/PCA9685.png) | [`Amazon`](https://www.amazon.fr/dp/B072N8G7Y9) |
+| 1x Boosteur 5v-12v      | [`Image`](https://github.com/archprojectdev/archmonitor/blob/main/support/preview/boosteur_5v_12v.png) | [`Amazon`](https://www.amazon.fr/dp/B0CW9P4CQP) |
+| 3x Sonde DS18B20        | [`Image`](https://github.com/archprojectdev/archmonitor/blob/main/support/preview/DS18B20.png) | [`Amazon`](https://www.amazon.fr/dp/B075FYYLLV) |
+| 3x HUBS FAN 4 PINS      | [`Image`](https://github.com/archprojectdev/archmonitor/blob/main/support/preview/hub_fan.png) | [`Amazon`](https://www.amazon.fr/dp/B08XWWXBYD) |
+| 2x Cables FAN 4 PINS    | [`Image`](https://github.com/archprojectdev/archmonitor/blob/main/support/preview/cable_4_pins.png) | [`Amazon`](https://www.amazon.fr/dp/B01N1Z3FYD) |
+| 1x HUB ARGB2 + Cable    | [`Image`](https://github.com/archprojectdev/archmonitor/blob/main/support/preview/hub_argb2_cable.png) | [`Amazon`](https://www.amazon.fr/dp/B0D2SMNKZY) |
+| 1x Écran 800x480        | [`Image`](https://github.com/archprojectdev/archmonitor/blob/main/support/preview/screen_800x480.png) | [`Amazon`](https://www.amazon.fr/dp/B096ZSZFC8) |
+| 1x Cable Micro HDMI     | [`Image`](https://github.com/archprojectdev/archmonitor/blob/main/support/preview/cable_microHDMI.png) | [`Amazon`](https://www.amazon.fr/dp/B09J4HMP25) |
+| 1x Cable USB 3.2        | [`Image`](https://github.com/archprojectdev/archmonitor/blob/main/support/preview/USB3.2.png) | [`Amazon`](https://www.amazon.fr/dp/B0BWHZBPGJ) |
+| 2x Cable USB-A Mini-B   | [`Image`](https://github.com/archprojectdev/archmonitor/blob/main/support/preview/usbaminib.png) | [`Amazon`](https://www.amazon.fr/dp/B089F9V5GK) |
+| 1x Cable extension SATA | [`Image`](https://github.com/archprojectdev/archmonitor/blob/main/support/preview/sata_power.png) | [`Amazon`](https://www.amazon.fr/dp/B07C71J8LL) |
 
+⚠️ Suivant l'écran utilisé les cables nécessaires peuvent varier.
 
 ## 🛠️ Impression 3D :
 
-| Pièces                  | Fichiers                                                                                         |
-|-------------------------|--------------------------------------------------------------------------------------------------|
-| 1x Boitier              | [`Plan PDF`](https://www.amazon.fr/dp/B09TTNF8BT) - [`STL`](https://www.amazon.fr/dp/B09TTNF8BT) |
-| 1x Couvercle            | [`Plan PDF`](https://www.amazon.fr/dp/B09TTNF8BT) - [`STL`](https://www.amazon.fr/dp/B09TTNF8BT) |
-| 1x Fixation_Cable_2P_4D | [`Plan PDF`](https://www.amazon.fr/dp/B09TTNF8BT) - [`STL`](https://www.amazon.fr/dp/B09TTNF8BT) |
-| 3x Fixation_Cable_2P_5D | [`Plan PDF`](https://www.amazon.fr/dp/B09TTNF8BT) - [`STL`](https://www.amazon.fr/dp/B09TTNF8BT) |
-| 1x Panneau_Ports_RPI_4B | [`Plan PDF`](https://www.amazon.fr/dp/B09TTNF8BT) - [`STL`](https://www.amazon.fr/dp/B09TTNF8BT) |
+| Pièces                  | Fichiers                                                                                                                                                                                                                     |
+|-------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 1x Boitier              | [`Plan PDF`](https://github.com/archprojectdev/archmonitor/blob/main/support/blueprint/Boitier/Boitier.pdf) - [`STL`](https://github.com/archprojectdev/archmonitor/blob/main/support/blueprint/Boitier/Boitier.STL)         |
+| 1x Couvercle            | [`Plan PDF`](https://github.com/archprojectdev/archmonitor/blob/main/support/blueprint/Couvercle/Couvercle.pdf) - [`STL`](https://github.com/archprojectdev/archmonitor/blob/main/support/blueprint/Couvercle/Couvercle.STL) |
+| 1x Fixation_Cable_2P_4D | [`Plan PDF`](https://github.com/archprojectdev/archmonitor/blob/main/support/blueprint/Fixation_Cable_2P_4D/Fixation_Cable_2P_4D.pdf) - [`STL`](https://github.com/archprojectdev/archmonitor/blob/main/support/blueprint/Fixation_Cable_2P_4D/Fixation_Cable_2P_4D.STL)         |
+| 3x Fixation_Cable_2P_5D | [`Plan PDF`](https://github.com/archprojectdev/archmonitor/blob/main/support/blueprint/Fixation_Cable_2P_5D/Fixation_Cable_2P_5D.pdf) - [`STL`](https://github.com/archprojectdev/archmonitor/blob/main/support/blueprint/Fixation_Cable_2P_5D/Fixation_Cable_2P_5D.STL)         |
+| 1x Panneau_Ports_RPI_4B | [`Plan PDF`](https://github.com/archprojectdev/archmonitor/blob/main/support/blueprint/Panneau_Ports_RPI_4B/Panneau_Ports_RPI_4B.pdf) - [`STL`](https://github.com/archprojectdev/archmonitor/blob/main/support/blueprint/Panneau_Ports_RPI_4B/Panneau_Ports_RPI_4B.STL)         |
 
-Plan de montage général : [`Plan PDF`](https://www.amazon.fr/dp/B09TTNF8BT)
+Plan de montage général : [`Plan PDF`](https://github.com/archprojectdev/archmonitor/blob/main/support/blueprint/ArchMonitor.pdf)
 
 
-## 🛠️ Schémas de câblage :
+## 🛠️ Câblage :
 
 | Circuit | Fichiers                                          |
 |---------|---------------------------------------------------|
@@ -67,7 +103,7 @@ Plan de montage général : [`Plan PDF`](https://www.amazon.fr/dp/B09TTNF8BT)
 | Sensors | [`Plan PDF`](https://www.amazon.fr/dp/B09TTNF8BT) |
 
 
-## 🧑🏻‍💻️ Installation de Raspbian 64 :
+## 💻️ Installation de Raspberry Pi OS :
  - Configuration l'installation via `Raspberry PI Imager` via Ubuntu au une autre distribution
  - Installation de `Raspberry Pi OS 64Bits` sur la carte SD
  - Démarrage du PI
@@ -75,7 +111,7 @@ Plan de montage général : [`Plan PDF`](https://www.amazon.fr/dp/B09TTNF8BT)
 Pour plus de simplicité j’utilise l’user `archmonitor`, vous le retrouver dans les commandes à venir.
 
 
-## 🧑🏻‍💻 Mise à jour :
+## 💻 Mise à jour :
 ```bash
 sudo apt-get update && sudo apt-get upgrade
 sudo rpi-update
@@ -83,7 +119,7 @@ sudo reboot
 ```
 
 
-## 🧑🏻‍💻 Activation des ports :
+## 💻 Activation des ports :
 ```bash
 sudo raspi-config
 ```
@@ -98,7 +134,7 @@ sudo modprobe w1-therm
 ```
 
 
-## 🧑🏻‍💻 Modification des fichiers boot :
+## 💻 Modification des fichiers boot :
 
 ### 📄 `/boot/firmware/cmdline.txt` ➡️ [`cmdline.txt`](https://www.amazon.fr/dp/B09TTNF8BT)<br>
 ```bash
@@ -148,7 +184,7 @@ sudo reboot
 ```
 
 
-## 🧑🏻‍💻 Test de détection des sondes :
+## 💻 Test de détection des sondes :
 ```bash
 cd /sys/bus/w1/devices/
 ls
@@ -174,7 +210,7 @@ cat w1_slave
 La deuxième ligne vous indiquera la température de la sonde en millième de degré : `t=21125`<br/>
 La sonde indique 21 degrés : `21125 / 100 = 21`
 
-## 🧑🏻‍💻 Installation des librairies Python :
+## 💻 Installation des librairies Python :
 ```bash
 sudo apt-get install pigpio python3-pigpio
 sudo systemctl enable pigpiod
@@ -187,10 +223,10 @@ sudo reboot
 ```
 
 
-## 🧑🏻‍💻 Téléchargement :
-📂 Dans le `home` de votre `user`, ici `/home/archmonitor/` :
+## 💻 Téléchargement :
+📂 Dans le `home` de votre `user`:
 ```bash
-wget https://github.com/archprojectdev/archgui/archive/refs/heads/main.zip
+wget https://github.com/archprojectdev/archmonitor/archive/refs/heads/main.zip
 unzip main.zip
 
 mv archmonitor-main archmonitor
@@ -202,9 +238,41 @@ unzip main.zip
 mv archgui-main archgui
 ```
 
+```bash
+/home/archmonitor/archmonitor/
 
-## 🧑🏻‍💻 Configuration :
-📂 Dans le `home` de votre `user`, ici `/home/archmonitor/` :
+├── archgui
+│   ├── config
+│   │   └── default.json
+│   │
+│   ├── __init__.py
+│   ├── Interpreter.py
+│   ├── Model.py
+│   ├── README.md
+│   ├── Windows.py
+│   └── Workarea.py
+│   
+├── archgui_events
+│   └── main.py
+│   
+├── archgui_windows
+│   └── main.json
+│   
+├── resource
+├── support
+│   
+├── config.json
+├── Display.py
+├── Listener.py
+├── main.py
+├── README.md
+├── sensors.py
+├── Spiled.py
+└── Temperature.py
+```
+
+## 💻 Configuration :
+📂 Dans le `home` de votre `user`:
 ```bash
 cd archmonitor
 python sensors.py
@@ -229,7 +297,7 @@ Une fois déterminé, modifier le fichier `/home/archmonitor/archmonitor/config.
 
 
 
-## 🧑🏻‍💻 Création des fichiers Xorg :
+## 💻 Création des fichiers Xorg :
 ### 📄 `/etc/X11/xorg.conf.d/10-blanking.conf` ➡️ [`10-blanking.conf`](https://www.amazon.fr/dp/B09TTNF8BT)<br>
 
 
@@ -273,7 +341,7 @@ EndSection
 ```
 
 
-## 🧑🏻‍💻 Création des fichiers de lancement :
+## 💻 Création des fichiers de lancement :
 ### 📄 Créer le fichier : `/home/archmonitor/.bashrc`
 ```bash
 nano .bashrc
