@@ -20,7 +20,7 @@ Le logiciel ArchMonitor est basé sur la surcouche `ArchGUI` lui-même basé sur
 Ce programme fonctionne sur un `Raspberry PI 4B` avec le dernier `Raspberry Pi OS 64Bits` comme OS.<br/><br/>
 
 
-⚠️ Ceci module est encore en phase beta. De nombreuse amélioration et possibilité vont etre apporté dans les mois à venir.<br/><br/>
+⚠️ Ceci module est encore en phase beta. De nombreuses améliorations et possibilités vont etre apportées dans les mois à venir.<br/><br/>
 Les améliorations déjà prévues sont : 
 
 - Une configuration de plusieurs modes lumineux supplémentaires directement via l’écran tactile.
