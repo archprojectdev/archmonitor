@@ -32,6 +32,18 @@ Les améliorations déjà prévues sont :
 
 <br/>
 
+| Boitier prototype fermé               | Boitier prototype ouvert              |
+|---------------------------------------|---------------------------------------|
+| ![Image](support/picture/proto_0.png) | ![Image](support/picture/proto_1.png) |
+
+| Affichage sur écran tactile           | STL disponible pour impression 3D     |
+|---------------------------------------|---------------------------------------|
+| ![Image](support/picture/proto_2.png) | ![Image](support/picture/proto_3.png) |
+
+
+<br/>
+
+
 ## 😊 Alimentation et principe de fonctionnement :
 
 ### Les alimentations :
@@ -69,6 +81,7 @@ Une fois l’ordinateur démarré, le Raspberry PI contrôle les signaux PWM des
 |-------------------------|----------------------------------------------------------------------------------------------|-------------------------------------------------|
 | 1x Raspberry PI 4B      | [`Image`](https://github.com/archprojectdev/archmonitor/blob/main/support/preview/RPI4B.png) | [`Amazon`](https://www.amazon.fr/dp/B09TTNF8BT) |
 | 1x Dissipateur          | [`Image`](https://github.com/archprojectdev/archmonitor/blob/main/support/preview/heat_sink.png) | [`Amazon`](https://www.amazon.fr/dp/B08N617L1J) |
+| 1x PAD Cuivre 1.5mm     | [`Image`](https://github.com/archprojectdev/archmonitor/blob/main/support/preview/pad_cuivre.png) | [`Amazon`](https://www.amazon.fr/dp/B07G73J1T8) |
 | 1x Ventilateur 120mm    | [`Image`](https://github.com/archprojectdev/archmonitor/blob/main/support/preview/fan_120mm.png) | [`Amazon`](https://www.amazon.fr/dp/B09RWTCXRR) |
 | 1x Contrôleur PCA9685   | [`Image`](https://github.com/archprojectdev/archmonitor/blob/main/support/preview/PCA9685.png) | [`Amazon`](https://www.amazon.fr/dp/B072N8G7Y9) |
 | 1x Boosteur 5v-12v      | [`Image`](https://github.com/archprojectdev/archmonitor/blob/main/support/preview/boosteur_5v_12v.png) | [`Amazon`](https://www.amazon.fr/dp/B0CW9P4CQP) |
@@ -99,7 +112,8 @@ Une fois l’ordinateur démarré, le Raspberry PI contrôle les signaux PWM des
 | 3x Fixation_Cable_2P_5D | [`Plan PDF`](https://github.com/archprojectdev/archmonitor/blob/main/support/blueprint/Fixation_Cable_2P_5D/Fixation_Cable_2P_5D.pdf) - [`STL`](https://github.com/archprojectdev/archmonitor/blob/main/support/blueprint/Fixation_Cable_2P_5D/Fixation_Cable_2P_5D.STL)         |
 | 1x Panneau_Ports_RPI_4B | [`Plan PDF`](https://github.com/archprojectdev/archmonitor/blob/main/support/blueprint/Panneau_Ports_RPI_4B/Panneau_Ports_RPI_4B.pdf) - [`STL`](https://github.com/archprojectdev/archmonitor/blob/main/support/blueprint/Panneau_Ports_RPI_4B/Panneau_Ports_RPI_4B.STL)         |
 
-Plan de montage général : [`Plan PDF`](https://github.com/archprojectdev/archmonitor/blob/main/support/blueprint/ArchMonitor.pdf)
+Plan de montage général : [`Plan PDF`](https://github.com/archprojectdev/archmonitor/blob/main/support/blueprint/ArchMonitor.pdf)<br/>
+⚠️ Le PAD de cuivre n’est pas visible sur le plan. Il prend place dans l'encoche du boitier sous le PI avec un PAD thermique en silicone entre le PI et le PAD en cuivre.
 
 <br/>
 
