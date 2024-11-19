@@ -395,6 +395,7 @@ nano .bashrc
 ### 📄 Créer le fichier : `/home/archmonitor/startx.sh`
 ```bash
 nano startx.sh
+>> cd /home/archmonitor/archmonitor
 >> startx
 ```
 ### 📄 Créer le fichier : `/home/archmonitor/.xinitrc`
