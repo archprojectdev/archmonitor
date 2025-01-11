@@ -1,6 +1,5 @@
 
-# <p align="center">Archmonitor</p>
-
+![Image](support/logo-watercooling_monitor.png)
 Archmonitor est un module de gestion autonome de refroidissement liquide. 
 Cette première version beta fonctionne sur un `Raspberry PI 4B` et prend en charge la configuration suivante :
 
@@ -86,7 +85,7 @@ Une fois l’ordinateur démarré, le Raspberry PI contrôle les signaux PWM des
 | 1x Raspberry PI 4B      | [`Image`](https://github.com/archprojectdev/archmonitor/blob/main/support/preview/RPI4B.png) | [`Amazon`](https://www.amazon.fr/dp/B09TTNF8BT) |
 | 1x Dissipateur          | [`Image`](https://github.com/archprojectdev/archmonitor/blob/main/support/preview/heat_sink.png) | [`Amazon`](https://www.amazon.fr/dp/B08N617L1J) |
 | 1x PAD Cuivre 1.5mm     | [`Image`](https://github.com/archprojectdev/archmonitor/blob/main/support/preview/pad_cuivre.png) | [`Amazon`](https://www.amazon.fr/dp/B07G73J1T8) |
-| 1x Ventilateur 120mm    | [`Image`](https://github.com/archprojectdev/archmonitor/blob/main/support/preview/fan_120mm.png) | [`Amazon`](https://www.amazon.fr/dp/B09RWTCXRR) |
+| 1x Ventilateur 120mm    | [`Image`](https://github.com/archprojectdev/archmonitor/blob/main/support/preview/120mm.png) | [`Amazon`](https://www.amazon.fr/dp/B09RWTCXRR) |
 | 1x Contrôleur PCA9685   | [`Image`](https://github.com/archprojectdev/archmonitor/blob/main/support/preview/PCA9685.png) | [`Amazon`](https://www.amazon.fr/dp/B072N8G7Y9) |
 | 1x Boosteur 5v-12v      | [`Image`](https://github.com/archprojectdev/archmonitor/blob/main/support/preview/boosteur_5v_12v.png) | [`Amazon`](https://www.amazon.fr/dp/B0CW9P4CQP) |
 | 3x Sonde DS18B20        | [`Image`](https://github.com/archprojectdev/archmonitor/blob/main/support/preview/DS18B20.png) | [`Amazon`](https://www.amazon.fr/dp/B075FYYLLV) |
